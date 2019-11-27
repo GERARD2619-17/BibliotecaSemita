@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    width: 100%;
+    background: #161616;
+    height: 70px;
+    position: inherit;
+    z-index: 10;
+}
+.ancho{
+    width: 100%;
+    height: 100px;
+/*    background: #1ABC9C;*/
+    margin: auto;
+}
+.logo{
+    width: 30%;
+    height: 70px;
+/*    background: #1ABC9C;*/
+    float: left;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+.logo p a{
+    color: #fff;
+    font-size: 40px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav{
+    width: 10%;
+    height: 70px;
+  /*  background: #1ABC9C;*/
+    float: left;
+    text-align: center;
+    padding-top: 24px;  
+    box-sizing: border-box;
+}
+nav ul li{
+    display: inline;
+}
+nav ul li a{
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-left: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.main-menu {
+  text-align: center;
+  position: relative;
+}
+.main-menu ul {
+  position: absolute;
+  background-color: #161616;
+  width: 100%;
+}
+.main-menu ul li {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  line-height: 102px;
+}
+
+.main-menu ul li a {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  outline: 0;
+  border: 0;
+  display: block;
+}
+.menu ul li a:hover {
+  background: url(imagenes/active-state.png) ;
+  background-position: center 10%;
+}
+.responsive .main-menu {
+  display: none;
+}
+.responsive .main-menu ul li {
+  width: 100%;
+}
+.responsive .main-menu ul li a {
+  line-height: 55px;
+  padding: 10px 20px;
+}
+.responsive .main-menu ul li a:hover {
+  background-image: none;
+  color: #26b864;
+  border-bottom: 20px;
+}
