@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="61ee2463-13f9-44d4-8004-02c436ae33b5">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idlibro" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select p.idprestamo,
+l.titulo as libros,
+p.fechadevolucion as fecha_hora_entrega,
+e.estado as estado
+from libros l, estado e, prestamos p
+where l.idlibro=p.idlibro and e.idestado=p.idestado
+and p.idlibro = $P{idlibro}]]>
+	</queryString>
+	<field name="idprestamo" class="java.lang.Integer"/>
+	<field name="libros" class="java.lang.String"/>
+	<field name="fecha_hora_entrega" class="java.sql.Timestamp"/>
+	<field name="estado" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="11" width="555" height="55" forecolor="#FFFFFF" backcolor="#000099" uuid="fee04553-e920-4333-aa00-d37e19235b41"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Black" size="18"/>
+				</textElement>
+				<text><![CDATA[Reporte de Prestamos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="50" height="30" forecolor="#FFFFFF" backcolor="#000099" uuid="88397258-c815-4245-968f-b62b1732918e"/>
+				<text><![CDATA[idprestamo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="50" y="0" width="268" height="30" forecolor="#FFFFFF" backcolor="#000099" uuid="0f1cf8ef-a67a-40b2-91f0-1142f8f2546d"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[libros]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="318" y="0" width="138" height="30" forecolor="#FFFFFF" backcolor="#000099" uuid="2ec4d35b-66b6-4286-b096-3b5a5c7c415f"/>
+				<text><![CDATA[fecha_hora_entrega]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="456" y="0" width="99" height="30" forecolor="#FFFFFF" backcolor="#000099" uuid="8a27ec56-aeca-4483-817e-51099d78647b"/>
+				<text><![CDATA[estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="50" height="20" uuid="c81302ac-4c5b-481b-aa5c-230b53aed3a1"/>
+				<textFieldExpression><![CDATA[$F{idprestamo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="0" width="226" height="20" uuid="013de29d-d7cb-49a9-9785-f9267110f741"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{libros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="0" width="138" height="20" uuid="eb81031e-3a83-4c64-a3c1-ba5a01fb4dbc"/>
+				<textFieldExpression><![CDATA[$F{fecha_hora_entrega}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="456" y="0" width="99" height="20" uuid="cea98a10-ea67-4261-8eb1-043fcb58b757"/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

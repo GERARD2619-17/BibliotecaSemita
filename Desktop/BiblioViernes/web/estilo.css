@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    background: #161616;
+    height: 70px;
+    position: inherit;
+    z-index: 10;
+}
